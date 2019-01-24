@@ -28,3 +28,27 @@
 
 // DEVELOPER DEFINED ERRORS.
 
+// THROW
+
+// try {
+//     // code here...
+//     throw new Error('my custom error');
+// } catch(error) {                          // caught my custom error.
+//     console.log('error: ', error);
+// } finally {
+//     console.log('this always executes');
+// }
+
+
+// SETTLING A PROMISE
+
+// let promise = new Promise (
+//     function(resolve, reject) {
+//         setTimeout(resolve, 100, 'someValue');
+//     }
+// );
+
+// promise.then(
+//     value => console.log('fulfilled: ' + value),
+//     error => console.log('rejected: ' + error)
+// );
