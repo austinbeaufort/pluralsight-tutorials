@@ -1,0 +1,152 @@
+How Git Works and Mastering Git courses on pluralsight
+
+Inside of Git:
+-p
+data is stored in hashes
+git log
+git cat-file
+access hidden folders with ls -a
+git count-objects
+git tag "annotated tags"
+Each git object is a sequence of bytes identified by a Sha1
+
+Start .git // opens hidden .git folder
+
+
+Git Objects:
+Blobs, 
+Trees, 
+Commits, 
+Annotated Tags
+
+
+Branches Demystified:
+Git branch
+Branches can be found in .git folder under ‘refs’, then ‘heads’
+A local branch is just a reference to a commit
+HEAD file is reference to a branch
+Git checkout: changes branches
+Git merge
+
+HEAD marks current position
+
+Current branch tracks new commits
+When you move to another commit, git updates your working directory.
+Unreachable objects are garbage collected.
+
+
+
+Rebasing:
+
+Tags are like branches but do not move.
+
+
+Version Control:
+Git clone: 
+Git branch all *Shows all branches of project.
+Git show-ref:
+A remote branch is just a reference to a commit
+Git push:
+Git pull:
+Git fetch:
+Git merge:
+
+Order: 1. Fetch  / ‘fetch and merge’ are combined to one command: git ‘pull’.
+	2. Merge
+	3. Push
+
+Never rebase shared commits.
+
+Fork: remote clone, taking project from someone’s github to my github.
+
+Multiple remotes, upsteam.
+Pull from upstream, push to origin.
+Pull request sent to those who maintain original master copy.
+
+
+Powershell:
+Tree / F
+
+
+
+Mastering Git
+
+Four Git Storage Areas:
+=> Local Working Area
+=> Online Repository
+=> Index, where files go before a commit
+=> Stash, a temporary storage area.
+
+How does command move info across the areas?
+How does the command change the repository?
+
+Repository is in .git folder.
+Git Objects:
+*blobs
+*trees
+*commits
+
+Can be created and deleted, but never changed.
+
+Branches are references to commits
+
+HEAD is pointing to the current branch. The branch is pointing to a commit, which is the current commit.
+
+Git does garbage collection on unreachable commits.
+
+
+INDEX:
+Goes between the working area and repository. Index is the staging area.
+
+Git diff (sometimes takes an argument)\
+
+Git diff --cached (compares the index area to the repository area.)
+
+Git checkout: (copies data from the repository to the working area and the index.)
+
+Can make a new file with VIM
+
+Git rm --cached “” moves file from index back to working area.
+
+Mv command to rename files in the terminal
+
+
+Git automatically finds out when you’re renaming or moving files.
+
+
+Git reset:
+*does different things in different contexts
+
+Reset moves a branch. Reset moves the branch to what we want to point at a specific commit.
+
+Reset --hard: copies data from the new current commit, to the working area and the index.
+Reset --mixed: copies data from the new current commit to only the index.
+Reset --soft: reset the branch and do not reset the index or working area.
+
+Reset: => Moves the current branch, and optionally copies data from the repository to the other areas.
+
+Git reset HEAD
+
+Default reset is a --mixed reset.
+
+Git stash: * does not change unless we want it to.
+
+Git stash: saves stuff for later to keep safe and out of the way.
+
+Git stash list: shows items stashed
+Git stash apply retrieves files from the stash and moves them to the working area.
+
+Git stash clear: *clears the stash
+
+Git show * get description of data of commits
+
+Git is like a toolbox
+
+Git log --graph --decorate --oneline
+
+Git show HEAD^  <<< the carrot means get the parent commit of HEAD
+
+
+How to refer to specific commits in version history
+
+Use git blame: on a specific file gets file info
